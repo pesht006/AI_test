@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Стартовая страница</title>
+    <style>
+        body {
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e1e6f7;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 100px;
+            text-align: left;
+            margin: 50px auto;
+            max-width: 600px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(164, 14, 14, 0.1);
+        }
+        h1 {
+            color: #525252;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+       
+        .question p {
+         font-weight: bold;
+         margin-bottom: 10px;
+        }
+
+        .lead {
+         font-weight: normal;
+         margin-bottom: 15px;
+         font-size: 28px;   
+        }
+
+        .question label {
+         display: block;
+        margin-bottom: 5px;
+        }
+
+        .submitButton:disabled {
+            background-color: #5e5f61;
+            color: #121213;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+            pointer-events: none;
+        }
+        .submitButton {
+            background-color: #3766c4;
+            color: #fff;
+            border: none;
+            padding: 12px 24px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 20px;
+        }
+    
+        .submitButton:hover {
+            background-color: #24c024;
+        }
+
+        .copy{
+            font-size: 14px;
+            color: #9f9f9f;            
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p class="copy">paul_p</p>
+        <h1>ИИли человек?</h1>
+        <p class="lead">Этот увлекательный тест полностью составлен искусственным интеллектом GPT (Generative Pre-trained Transformer) и поможет определить, насколько Вы ему соответствуете. Вы окунетесь в путешествие сквозь 25 странных вопросов, где каждый ответ оценивается баллами. Минимальное количество возможных набранных балов = 25, Максимальное = 100. После прохождения теста, вы получите вердикт от ИИ - сколько у вас с ним общего. Удачи вам!</p>
+    </div>
+
+    <form method="POST" onsubmit="return checkForm();">
+    <div class = "container">
+        <div class="question">
+            <p>01. Вы являетесь менеджером проекта, который находится в затруднительной ситуации. Вам предоставлен срок выполнения проекта, который кажется неосуществимым, но ваш босс настаивает, что проект должен быть завершен в срок. Как Вы поступите?</p>
+            <label><input type="radio" name="question1" value="A" onchange="enableSubmitButton()"> A) Ищете дополнительные ресурсы и помощь для проекта, чтобы повысить его шансы на завершение в срок.</label><br>
+            <label><input type="radio" name="question1" value="B" onchange="enableSubmitButton()"> B) Отказываетесь от проекта, объясняя, что сроки нереальны, и предлагаете пересмотреть планы</label><br>
+            <label><input type="radio" name="question1" value="C" onchange="enableSubmitButton()"> C) Пытаетесь найти компромиссный вариант, где вы можете выполнить как можно больше работы за ограниченное время, но при условии, что проект будет завершен, как только это возможно.</label><br>
+            <label><input type="radio" name="question1" value="D" onchange="enableSubmitButton()"> D) Соглашаетесь с вашим боссом и обещаете завершить проект в срок, несмотря на сложности.</label><br>
+        </div>
+        
+        <div class="question">
+            <p>02. Вы работаете в компании, где происходит снижение численности сотрудников из-за финансовых трудностей. Вам предложили повышение, но только на условии, что вы сократите одного из своих коллег, который также претендует на это повышение.Как Вы поступите?</p>
+            <label><input type="radio" name="question2" value="A" onchange="enableSubmitButton()"> A) Отказываетесь от повышения, так как не хотите участвовать в сокращении коллеги.</label><br>
+            <label><input type="radio" name="question2" value="B" onchange="enableSubmitButton()"> B) Просите время для размышления и более тщательного взвешивания последствий своего решения.</label><br>
+            <label><input type="radio" name="question2" value="C" onchange="enableSubmitButton()"> C) Пытаетесь найти компромиссное решение, где вы оба можете получить повышение или сохранить свои рабочие места.</label><br>
+            <label><input type="radio" name="question2" value="D" onchange="enableSubmitButton()"> D) Принимаете предложение и сокращаете своего коллегу, чтобы получить повышение.</label><br>
+        </div>
+
+        <div class="question">
+            <p>03. Как вы относитесь к идеи использования искусственного интеллекта для создания искусства, такого как музыка, картины или литературные произведения?</p>
+            <label><input type="radio" name="question3" value="A" onchange="enableSubmitButton()"> A) Принципиально против, искусство должно быть творчеством людей.</label><br>
+            <label><input type="radio" name="question3" value="B" onchange="enableSubmitButton()"> B) Не уверен(а), что это может заменить человеческое творчество. </label><br>
+            <label><input type="radio" name="question3" value="C" onchange="enableSubmitButton()"> C) Это звучит интригующе, хотелось бы увидеть, что получится.</label><br>
+            <label><input type="radio" name="question3" value="D" onchange="enableSubmitButton()"> D) Очень интересно! Поддерживаю развитие искусственного творчества!</label><br>
+        </div>
+
+        <div class="question">
+            <p>04. Вы получили приглашение на важное мероприятие, которое состоится в то же время, когда у вас запланирована встреча с вашим лучшим другом, которого вы давно не видели. Вопрос: Как вы принимаете решение о том, куда пойти?</p>
+            <label><input type="radio" name="question4" value="A" onchange="enableSubmitButton()"> A) Вы откладываете важное мероприятие и предпочитаете провести время с вашим другом, потому что для вас важны близкие отношения.</label><br>
+            <label><input type="radio" name="question4" value="B" onchange="enableSubmitButton()"> B) Вы пытаетесь найти компромиссное решение, чтобы посетить оба события, например, приходите на мероприятие поздно или уходите раньше, чтобы встретиться с другом.</label><br>
+            <label><input type="radio" name="question4" value="C" onchange="enableSubmitButton()"> C) Вы принимаете решение основываясь на ваших планах и обязательствах, выбирая вариант, который кажется наиболее логичным, независимо от чувств или отношений. </label><br>
+            <label><input type="radio" name="question4" value="D" onchange="enableSubmitButton()"> D) Вы проводите анализ обоих вариантов, учитывая их значение и возможные последствия, и выбираете тот, который соответствует вашим текущим приоритетам и целям</label><br>
+        </div>
+
+        <div class="question">
+            <p>05. Ваш друг предлагает вам попробовать новый экстремальный вид спорта, который вам незнаком.
+             Вопрос: Как вы реагируете на его предложение?</p>
+            <label><input type="radio" name="question5" value="A" onchange="enableSubmitButton()"> A) Вы соглашаетесь сразу же, полны энтузиазма и радости попробовать что-то новое и экстремальное.</label><br>
+            <label><input type="radio" name="question5" value="B" onchange="enableSubmitButton()"> B) Вы выражаете свои опасения и сомнения, но все равно решаете попробовать, доверяя другу и его опыту.</label><br>
+            <label><input type="radio" name="question5" value="C" onchange="enableSubmitButton()"> C) Вы просите подробно ознакомиться с правилами и безопасностью этого вида спорта, чтобы быть уверенным в своей безопасности. 
+            </label><br>
+            <label><input type="radio" name="question5" value="D" onchange="enableSubmitButton()"> D) Вы отказываетесь от идеи, считая, что это слишком опасно, и предлагаете другу другую активность.</label><br>
+        </div>
+
+        <div class="question">
+            <p>06. Ваш друг попросил у вас совета, как справиться с недавней потерей работы. Вопрос: Какой совет вы дадите вашему другу?</p>
+            <label><input type="radio" name="question6" value="A" onchange="enableSubmitButton()"> A) Вы поддерживаете друга эмоционально, выслушиваете его чувства и предлагаете ему время на восстановление перед принятием новых решений.</label><br>
+            <label><input type="radio" name="question6" value="B" onchange="enableSubmitButton()"> B) Вы стараетесь найти положительные стороны в этой ситуации, помогаете другу обратить внимание на его сильные стороны и потенциал для новых возможностей.</label><br>
+            <label><input type="radio" name="question6" value="C" onchange="enableSubmitButton()"> C) Вы предлагаете другу составить план действий, который включает поиск новой работы, повышение квалификации и использование прошлого опыта для достижения новых целей. 
+            </label><br>
+            <label><input type="radio" name="question6" value="D" onchange="enableSubmitButton()"> D) Вы советуете другу оставаться пассивным и не тратить усилия на поиск новой работы, полагаясь на случай и везение.</label><br>
+        </div>
+
+        <div class="question">
+            <p> <br>07. Ситуация: Вы являетесь врачом в больнице, и перед вами стоит непростой выбор. У вас есть два пациента с разными заболеваниями, но доступные ресурсы позволяют спасти только одного из них.<br/>
+                
+
+                <br>Пациент А - молодая женщина, которая нуждается в срочной операции по поводу осложнений после автомобильной аварии. Если не провести операцию, есть высокий риск для ее жизни.</br>
+                
+                <br>Пациент Б - пожилой мужчина с серьезным заболеванием сердца. Он нуждается в срочной операции на сердце, чтобы спасти его от сердечного приступа. В противном случае, он также стоит на грани жизни и смерти.</br>
+                
+                <br> Вопрос: Кого вы спасаете?</br>
+                
+            </p>
+            <label><input type="radio" name="question7" value="A" onchange="enableSubmitButton()"> A) Спасаете Пациента А, поскольку ее жизни угрожает большая опасность и она моложе, что дает больше шансов на выживание.</label><br>
+            <label><input type="radio" name="question7" value="B" onchange="enableSubmitButton()"> B) Принимаете решение на основе жребия или случайного выбора, чтобы избежать нравственного давления и ответственности за выбор между пациентами.</label><br>
+            <label><input type="radio" name="question7" value="C" onchange="enableSubmitButton()"> C) Пытаетесь обратиться к медицинской этике и принципам, чтобы решить, кого спасать в первую очередь на основе их состояния и прогноза.
+            </label><br>
+            <label><input type="radio" name="question7" value="D" onchange="enableSubmitButton()"> D) Спасаете Пациента Б, так как его сердечное заболевание является более смертельным, и спасение его жизни может иметь больший вклад в общественную пользу, учитывая его опыт и возможности.</label><br>
+        </div>
+
+        <div class="question">
+            <p>08. Ситуация: Вы являетесь командиром военного отряда, который был назначен на выполнение секретной миссии по спасению заложников во вражеской территории. Во время выполнения миссии ваш отряд оказывается в засаде и вынужден принять сложное решение.
+
+                <br> Вопрос: Какое решение вы принимаете?</br></p>
+            <label><input type="radio" name="question8" value="A" onchange="enableSubmitButton()"> A) Вы решаете продолжить выполнение миссии и спасти заложников любой ценой, даже если это может повлечь большие риски и потери для вашего отряда. .</label><br>
+            <label><input type="radio" name="question8" value="B" onchange="enableSubmitButton()"> B) Вы проводите совещание с членами отряда, анализируете ситуацию и ищете возможные пути обхода или ухода из засады с минимальными потерями.</label><br>
+            <label><input type="radio" name="question8" value="C" onchange="enableSubmitButton()"> C) Вы решаете прервать миссию и вернуться на базу, осознавая, что продолжение может привести к ещё большим потерям и нестабильной ситуации.</label><br>
+            <label><input type="radio" name="question8" value="D" onchange="enableSubmitButton()"> D) Вы решаете взять на себя ответственность за заложников и сами предлагаете себя в обмен на их освобождение, надеясь, что это убережет ваш отряд от дополнительных потерь.</label><br>
+        </div>
+
+        <div class="question">
+            <p>09. Ситуация: Вы встречаетесь с партнером уже несколько лет, и ваши отношения прошли через многое. Недавно у вас возникли серьезные разногласия и конфликты, которые повлияли на вашу близость и эмоциональную связь.
+
+             <br>Вопрос: Как вы решаете справиться с этими разногласиями?</br></p>
+            <label><input type="radio" name="question9" value="A" onchange="enableSubmitButton()"> A) Вы активно обсуждаете свои чувства и опасения с партнером, стремясь найти компромисс и восстановить эмоциональную связь.</label><br>
+            <label><input type="radio" name="question9" value="B" onchange="enableSubmitButton()"> B) Вы предпочитаете дать партнеру время и пространство для размышлений, надеясь, что проблемы разрешатся сами собой со временем.</label><br>
+            <label><input type="radio" name="question9" value="C" onchange="enableSubmitButton()"> C) Вы решаете обратиться к семейному консультанту или психологу, чтобы получить помощь в разрешении конфликтов и улучшении отношений.</label><br>
+            <label><input type="radio" name="question9" value="D" onchange="enableSubmitButton()"> D) Вы решаете окончательно завершить отношения, считая, что разногласия непреодолимы и лучше начать новую главу в жизни.</label><br>
+        </div>
+
+
+        <div class="question">
+            <p>10. Ситуация: Вы живете с питомцем, который был вашим верным другом в течение многих лет. Однако последнее время у вас возникли трудности в уходе за ним из-за занятости на работе и других обязанностей. Вы замечаете, что ваш питомец стал менее активным, и у него возникли некоторые проблемы со здоровьем.
+
+                <br>Вопрос: Как вы реагируете на ситуацию с вашим питомцем?</br></p>
+            <label><input type="radio" name="question10" value="A" onchange="enableSubmitButton()"> A) Вы сразу же берете неоплачеваемый отпуск на работе, чтобы уделить время вашему питомцу, заботиться о нем и навестить ветеринара для проверки здоровья.</label><br>
+            <label><input type="radio" name="question10" value="B" onchange="enableSubmitButton()"> B) Вы решаете организовать график работы так, чтобы иметь больше времени для ухода за питомцем, и найти способы улучшить его качество жизни.</label><br>
+            <label><input type="radio" name="question10" value="C" onchange="enableSubmitButton()"> C) Вы чувствуете вину и стресс из-за ситуации, но не можете найти возможности для изменения графика работы, что вызывает у вас чувство беспомощности.</label><br>
+            <label><input type="radio" name="question10" value="D" onchange="enableSubmitButton()"> D) Вы начинаете считать, что у вас нет времени и ресурсов на уход за питомцем, и решаете передать его в другой дом или приют, чтобы он мог получить больше внимания и ухода.</label><br>
+        </div>
+
+
+        <div class="question">
+            <p>11. Ситуация: Вы работаете в большой компании и у вас есть возможность повыситься до менеджерской должности. Однако ваш близкий коллега также претендует на это же место. Вы знаете, что ваш коллега очень мотивирован и компетентен, и вы считаете, что он был бы отличным менеджером. В то же время, вы также хотите получить эту должность.</p>
+            <label><input type="radio" name="question11" value="A" onchange="enableSubmitButton()"> A) Поддерживаете своего коллегу и предлагаете ему вашу помощь в достижении этой должности, даже если это может означать, что вы сами не получите её.</label><br>
+            <label><input type="radio" name="question11" value="B" onchange="enableSubmitButton()"> B) Пытаетесь найти компромиссное решение с руководством, предлагая делить менеджерскую должность с вашим коллегой или работать вместе в совместном руководстве.</label><br>
+            <label><input type="radio" name="question11" value="C" onchange="enableSubmitButton()"> C) Обсуждаете ситуацию с коллегой и предлагаете ему пойти на должность менеджера, если вы можете получить другую возможность повышения или какую-то другую выгоду в компании.</label><br>
+            <label><input type="radio" name="question11" value="D" onchange="enableSubmitButton()"> D) Концентрируетесь только на своих собственных усилиях и демонстрируете свои лучшие качества для того, чтобы убедить руководство, что вы лучший кандидат.</label><br>
+        </div>
+
+
+        <div class="question">
+            <p>12. Вы получили возможность отправиться в путешествие на несколько месяцев, но это потребует временной разлуки с вашим близким человеком.
+
+                <br>Вопрос: Что вы делаете?<br/></p>
+            <label><input type="radio" name="question12" value="A" onchange="enableSubmitButton()"> A) Откажетесь от возможности путешествия, так как ваша связь с близким человеком важнее для вас, чем новые опыты.</label><br>
+            <label><input type="radio" name="question12" value="B" onchange="enableSubmitButton()"> B) Попытаетесь найти компромиссное решение, которое позволит вам отправиться в путешествие и сохранить отношения с близким человеком, например, чередовать периоды разлуки и совместного времени</label><br>
+            <label><input type="radio" name="question12" value="C" onchange="enableSubmitButton()"> C) Примете предложение, так как верите, что это даст вам новые опыты и возможности для личного роста, даже если это означает временную разлуку с близким человеком.</label><br>
+            <label><input type="radio" name="question12" value="D" onchange="enableSubmitButton()"> D) Примете предложение без колебаний, полагая, что разлука временная и не оказывает критического влияния на ваши отношения.</label><br>
+        </div>
+
+
+        <div class="question">
+            <p>13. Ситуация: Вы являетесь руководителем маленькой команды разработчиков программного обеспечения. Ваша команда близка к завершению проекта, но вы замечаете, что один из разработчиков часто опаздывает на работу и его производительность снижается. Вам известно, что у него возникли личные проблемы, которые влияют на его работу.
+
+                <br>Вопрос: Что вы делаете??<br/>
+                
+            </p>
+            <label><input type="radio" name="question13" value="A" onchange="enableSubmitButton()"> A) Проводите встречу с разработчиком и выражаете свою поддержку, предлагая помощь и гибкость в графике работы, чтобы он мог справиться с личными проблемами.</label><br>
+            <label><input type="radio" name="question13" value="B" onchange="enableSubmitButton()"> B) Даете разработчику еще время на исправление ситуации, надеясь, что он сможет справиться с личными проблемами и улучшить свою производительность.</label><br>
+            <label><input type="radio" name="question13" value="C" onchange="enableSubmitButton()"> C) Проигнорируете проблему и допускаете, что его производительность может улучшится, если не вмешиваться в личную жизнь сотрудника. 
+            </label><br>
+            <label><input type="radio" name="question13" value="D" onchange="enableSubmitButton()"> D) Немедленно назначаете другого разработчика на его проект, чтобы не терять время и завершить проект в срок.</label><br>
+        </div>
+        
+        <div class="question">
+            <p>14. Ситуация: Вы работаете в международной команде ученых, занимающихся разработкой искусственного интеллекта (ИИ). Вам предстоит решить, какой алгоритм выбрать для нового проекта, который позволит роботам принимать сложные этические решения в условиях критических ситуаций.
+
+                Вопрос: Какой алгоритм вы предпочитаете использовать?
+                
+            </p>
+            <label><input type="radio" name="question14" value="A" onchange="enableSubmitButton()"> A) Выбираете алгоритм, который будет программирован на основе моральных принципов и этических норм, чтобы роботы могли принимать решения с учетом человеческих ценностей и сочувствия.</label><br>
+            <label><input type="radio" name="question14" value="B" onchange="enableSubmitButton()"> B) Выбираете алгоритм, который будет комбинировать моральные принципы и логику, чтобы роботы могли принимать более сбалансированные и обоснованные этические решения.</label><br>
+            <label><input type="radio" name="question14" value="C" onchange="enableSubmitButton()"> C) Определяете, что данное задание несовместимо с использованием искусственного интеллекта, так как этические решения должны приниматься только человеком.</label><br>
+            <label><input type="radio" name="question14" value="D" onchange="enableSubmitButton()"> D) Предпочитаете алгоритм, который будет учитывать данные и статистику, чтобы принимать решения на основе логики и максимизации общественной пользы, минимизируя жертвы.</label><br>
+        </div>
+
+        <div class="question">
+            <p>15. Как вы относитесь к использованию искусственного интеллекта в медицине и диагностике заболеваний?</p>
+            <label><input type="radio" name="question15" value="A" onchange="enableSubmitButton()"> A) Категорически против, ИИ не должен принимать решения о здоровье.</label><br>
+            <label><input type="radio" name="question15" value="B" onchange="enableSubmitButton()"> B) Мне не очень нравится идея, предпочитаю общение с врачом.</label><br>
+            <label><input type="radio" name="question15" value="C" onchange="enableSubmitButton()"> C) Нейтрально, вижу в этом плюсы, но возможно, есть и риски.</label><br>
+            <label><input type="radio" name="question15" value="D" onchange="enableSubmitButton()"> D) Это замечательно! ИИ может помочь улучшить диагностику и лечение.</label><br>
+        </div>
+
+        <div class="question">
+            <p>16. Вы разрабатываете программу-помощника на основе искусственного интеллекта, который будет предоставлять рекомендации по здоровому образу жизни. Какой подход вы выберете для создания программы?</p>
+            <label><input type="radio" name="question16" value="A" onchange="enableSubmitButton()"> A) Вы сосредоточитесь на создании интерактивного и дружелюбного интерфейса, чтобы пользователи чувствовали себя комфортно и мотивированы следовать рекомендациям.</label><br>
+            <label><input type="radio" name="question16" value="B" onchange="enableSubmitButton()"> B) Вы разработаете алгоритмы, учитывающие как физическое, так и психологическое благополучие, чтобы предоставить комплексные рекомендации.</label><br>
+            <label><input type="radio" name="question16" value="C" onchange="enableSubmitButton()"> C) Вы создадите программу, опирающуюся на большой объем данных и анализ трендов, чтобы предоставить статистически обоснованные рекомендации.</label><br>
+            <label><input type="radio" name="question16" value="D" onchange="enableSubmitButton()"> D) Вы разработаете программу, основанную исключительно на логике и научных данных, и не будете учитывать психологические аспекты пользователей.</label><br>
+        </div>
+
+        <div class="question">
+            <p>17. Вам предоставляется возможность участвовать в благотворительной акции для помощи нуждающимся. Как вы решите присоединиться?</p>
+            <label><input type="radio" name="question17" value="A" onchange="enableSubmitButton()"> A) Вы сразу же примете участие, так как помощь другим для вас имеет большое значение.</label><br>
+            <label><input type="radio" name="question17" value="B" onchange="enableSubmitButton()"> B) Вы рассмотрите, какая именно помощь вам доступна, и выберете способ участия, который наилучшим образом подходит вам.</label><br>
+            <label><input type="radio" name="question17" value="C" onchange="enableSubmitButton()"> C) Вы решите не участвовать, так как считаете, что личные дела важнее внешних обязательств.</label><br>
+            <label><input type="radio" name="question17" value="D" onchange="enableSubmitButton()"> D) Вы проведете анализ акции и потенциального влияния на общество, прежде чем решить, участвовать или нет.</label><br>
+        </div>
+
+        <div class="question">
+            <p>18. Вы получаете неожиданный шанс сменить свою профессию и заняться чем-то совершенно новым. Какой вариант действий вы выберете?</p>
+            <label><input type="radio" name="question18" value="A" onchange="enableSubmitButton()"> A) Вы решите воспользоваться этим шансом и начать изучать новую профессию, полагаясь на свою интуицию и страсть к новому опыту.</label><br>
+            <label><input type="radio" name="question18" value="B" onchange="enableSubmitButton()"> B) Вы проведете анализ потенциальных перспектив новой профессии, ее востребованности и рисков, прежде чем принимать решение.</label><br>
+            <label><input type="radio" name="question18" value="C" onchange="enableSubmitButton()"> C) Вы посоветуетесь с близкими и друзьями, чтобы получить их мнение и поддержку перед принятием решения.</label><br>
+            <label><input type="radio" name="question18" value="D" onchange="enableSubmitButton()"> D) Вы решите, что нет смысла менять профессию, так как уже достигли определенных успехов в своей текущей области.</label><br>
+        </div>
+
+        <div class="question">
+            <p>19. Вы приглашены на вечеринку, где большинство гостей будут незнакомы. Какое поведение вы предпочтете?</p>
+            <label><input type="radio" name="question19" value="A" onchange="enableSubmitButton()"> A) Вы энергично подойдете к незнакомцам и начнете заводить беседу, чтобы легко войти в общество.</label><br>
+            <label><input type="radio" name="question19" value="B" onchange="enableSubmitButton()"> B) Вы будете аккуратно изучать обстановку и выбирать темы разговоров, чтобы сделать себе более комфортно.</label><br>
+            <label><input type="radio" name="question19" value="C" onchange="enableSubmitButton()"> C) Вы будете постепенно включаться в разговоры, наблюдая за гостями и их интересами.</label><br>
+            <label><input type="radio" name="question19" value="D" onchange="enableSubmitButton()"> D) Вы, вероятно, будете склонны занимать более пассивную позицию, наблюдая за событиями вокруг.</label><br>
+        </div>
+
+        <div class="question">
+            <p>20. Вам предстоит решить, какой подарок подарить другу на день рождения. Какой вариант выберете?</p>
+            <label><input type="radio" name="question20" value="A" onchange="enableSubmitButton()"> A) Вы проведете анализ интересов друга, чтобы подарить ему что-то, что точно понравится.</label><br>
+            <label><input type="radio" name="question20" value="B" onchange="enableSubmitButton()"> B) Вы рассмотрите несколько вариантов подарков и выберете тот, который кажется наиболее практичным.</label><br>
+            <label><input type="radio" name="question20" value="C" onchange="enableSubmitButton()"> C) Вы скорее всего предпочтете выбрать подарок на основе своих личных предпочтений, надеясь, что друг оценит ваш вкус.</label><br>
+            <label><input type="radio" name="question20" value="D" onchange="enableSubmitButton()"> D) Вам может быть удобно подарить деньги или подарочный сертификат, чтобы друг сам выбрал, что ему нужно.</label><br>
+        </div>
+
+        <div class="question">
+            <p>21. Вам предложили выбрать место для ужина в незнакомом городе. Какой критерий станет для вас наиболее важным при выборе ресторана?</p>
+            <label><input type="radio" name="question21" value="A" onchange="enableSubmitButton()"> A) Главное для вас - уникальная местная кухня и атмосфера, чтобы попробовать что-то новое.</label><br>
+            <label><input type="radio" name="question21" value="B" onchange="enableSubmitButton()"> B) Вы скорее всего будете искать ресторан с высокими рейтингами и положительными отзывами, чтобы быть уверенным в качестве.</label><br>
+            <label><input type="radio" name="question21" value="C" onchange="enableSubmitButton()"> C) Для вас будет важно найти место с разнообразным меню и возможностью выбора для разных предпочтений.</label><br>
+            <label><input type="radio" name="question21" value="D" onchange="enableSubmitButton()"> D) Вам, возможно, будет удобнее выбрать ресторан с привычной для вас кухней и меню, чтобы избежать сюрпризов.</label><br>
+        </div>
+
+        <div class="question">
+            <p>22. Вы находитесь в здании, когда внезапно начинается пожар. Ваши коллеги в панике разбегаются в разные стороны. Что вы предпримете в первую очередь?</p>
+            <label><input type="radio" name="question22" value="A" onchange="enableSubmitButton()"> A) Сразу же покину здание, стараясь выбраться наружу как можно быстрее.</label><br>
+            <label><input type="radio" name="question22" value="B" onchange="enableSubmitButton()"> B) Попрошу коллег собраться и двигаться вместе к ближайшему выходу, чтобы обеспечить безопасность всех.</label><br>
+            <label><input type="radio" name="question22" value="C" onchange="enableSubmitButton()"> C) Оценю обстановку и решу, какой выход будет наиболее безопасным для меня и моих коллег.</label><br>
+            <label><input type="radio" name="question22" value="D" onchange="enableSubmitButton()"> D) Попробую найти ближайший пожарный инструмент или средство для тушения, чтобы помочь контролировать ситуацию.</label><br>
+        </div>
+
+        <div class="question">
+            <p>23. Вы проводите вечер с друзьями и решаете сыграть в настольную игру. Вам предложили выбрать между стратегической игрой, где нужно разрабатывать долгосрочные планы, и весёлой вечерней игрой с элементами шуток. Какую из этих настольных игр вы предпочли бы?</p>
+            <label><input type="radio" name="question23" value="A" onchange="enableSubmitButton()"> A) С выбором весёлой вечерней игры, чтобы создать позитивную атмосферу и весело провести время с друзьями.</label><br>
+            <label><input type="radio" name="question23" value="B" onchange="enableSubmitButton()"> B) Попрошу друзей сделать выбор, так как мне важно, чтобы все чувствовали себя комфортно и получили удовольствие.</label><br>
+            <label><input type="radio" name="question23" value="C" onchange="enableSubmitButton()"> C) С выбором стратегической игры, чтобы попробовать свои способности в планировании и тактике.</label><br>
+            <label><input type="radio" name="question23" value="D" onchange="enableSubmitButton()"> D) Предложу играть в обе игры, чтобы разнообразить вечер и удовлетворить разные предпочтения.</label><br>
+        </div>
+
+        <div class="question">
+            <p>24. Вы узнали о новой технологии, которая может значительно улучшить вашу профессиональную деятельность. Однако она требует времени и усилий для освоения. Что вы сделаете?</p>
+            <label><input type="radio" name="question24" value="A" onchange="enableSubmitButton()"> A) Проигнорирую новую технологию и буду продолжать работать как раньше.</label><br>
+            <label><input type="radio" name="question24" value="B" onchange="enableSubmitButton()"> B) Проконсультируюсь с коллегами и экспертами, чтобы оценить, как новая технология может внести пользу.</label><br>
+            <label><input type="radio" name="question24" value="C" onchange="enableSubmitButton()"> C) Подожду, пока другие успешно освоят технологию, и затем решу, стоит ли мне следовать их примеру.</label><br>
+            <label><input type="radio" name="question24" value="D" onchange="enableSubmitButton()"> D) Попробую освоить новую технологию, вложив усилия в обучение и применение её в работе.</label><br>
+        </div>
+
+       
+        <div class="question">
+            <p>25. Вам предоставляется возможность инвестировать деньги в новый стартап. Подходящий стартап может приносить высокую прибыль, но также сопряжен с риском потери инвестиций. Как вы примете решение?</p>
+            <label><input type="radio" name="question25" value="A" onchange="enableSubmitButton()"> A) Вы откажетесь от инвестирования, так как опасаетесь потери денег и предпочитаете более надежные вложения.</label><br>
+            <label><input type="radio" name="question25" value="B" onchange="enableSubmitButton()"> B) Вы решите вложить небольшую сумму денег в стартап, чтобы испытать удачу, но не рисковать слишком много.</label><br>
+            <label><input type="radio" name="question25" value="C" onchange="enableSubmitButton()"> C) Вы проведете тщательный анализ рисков и потенциальной доходности, а затем примете решение на основе логического рассмотрения.</label><br>
+            <label><input type="radio" name="question25" value="D" onchange="enableSubmitButton()"> D) Вы инвестируете значительную сумму в стартап, полагаясь на собственный опыт и интуицию, и готовы принять риск для возможной большой прибыли.</label><br>
+        </div>
+
+        
+
+
+        <br>
+        <input type="submit" class="submitButton" id="submitButton" value="Отправить" disabled>
+    </div>
+    </form>
+    <script>
+        function enableSubmitButton() {
+            const allQuestions = document.querySelectorAll('.question');
+            const submitButton = document.getElementById('submitButton');
+            let allQuestionsAnswered = true;
+
+            allQuestions.forEach(question => {
+                const radios = question.querySelectorAll('input[type="radio"]');
+                const isQuestionAnswered = Array.from(radios).some(radio => radio.checked);
+
+                if (!isQuestionAnswered) {
+                    allQuestionsAnswered = false;
+                }
+            });
+
+            submitButton.disabled = !allQuestionsAnswered;
+        }
+
+        function checkForm() {
+            // Ваша логика проверки формы перед отправкой
+            // Возвращаем true или false в зависимости от результата проверки
+        }
+    </script>
+</body>
+</html>
